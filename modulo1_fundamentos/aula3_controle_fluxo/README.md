@@ -54,6 +54,7 @@ while True:
 ## B. Loops
 
 1. Loops começam com  `for` + item `in` iterable. Termina em dois pontos e necessariamente tem identação de 4 **espaços** na linha abaixo.
+
 ```python
 # Mineiro vai à feira
 sacola = ['queijo', 'goiabada', 'pao de queijo', 'torresmo', 'linguiça', 'café']
@@ -80,6 +81,7 @@ for letter in 'python is cool':
 *""" Funções são pedacinhos de códigos que facilitam a chamada repetidamente, organizam o código e compõem uma tarefa específica. """*
 
 1. Você já viu algumas funções que existem no `namespace` geral do python
+
 ```python
 # Exemplo de três funções encadeadas: print, sum e range
 print(sum([range(10)]))
@@ -88,17 +90,22 @@ print(sum([range(10)]))
 # Tamanho (len) também é uma função muito útil
 print(len('python is cool'))
 ```
+
 2. Funções começam sempre com a palavrinha `def`, terminam em dois pontos e necessariamente exigem 4 espaços na linha abaixo. Usualmente levam parâmetros e podem modificar o objeto, imprimir ou retornar valores.
+
 ```python
 def soma(a, b):
     return a + b
 ```
+
 3. A função em si, como acima, somente é armazenada no namespace. Para executá-la, é necessário chamá-la em algum outro momento do seu programa.
+
 ```python
 a = 7
 b =  6
 print(soma(6, 7))
 ```
+
 4. Funções, como tudo o resto, são objetos. Portanto, podem ser passadas como parãmetros.
 ```python
 def lemma():
