@@ -15,7 +15,9 @@ Contributor: Gabriel Pistelli
 >>> not True == False  # True
 >>> (2 + 2 == 4) and (2 + 3 == 4)  # False
 ```
+
 5. Conditions começam com `if` terminam em dois pontos `:` e necessariamente identação de 4 **espaços** na linha abaixo. Em seguida, podem ter `else` or `elif`. Veja os exemplos.
+
 ```python
 valor = 10
 if valor > 10:

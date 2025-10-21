@@ -17,5 +17,5 @@ def hour_converter(minutes):
 
 if __name__ == '__main__':
     # Ponto de entrada do programa. Parâmetros e sequência
-    m = 120
+    m = 343
     hour_converter(m)
