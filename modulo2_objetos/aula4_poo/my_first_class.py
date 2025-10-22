@@ -16,7 +16,7 @@ class Animal:
     def set_diet(self, tipo):
         self.diet = tipo
 
-    def change_legs(self, number):
+    def set_legs(self, number):
         self.legs = number
 
     def get_old(self):

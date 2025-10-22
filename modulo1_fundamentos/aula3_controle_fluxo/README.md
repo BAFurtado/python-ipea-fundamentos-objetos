@@ -158,6 +158,7 @@ print(area_triangulo(altura=10, base=8))
 8. function5_comentada.py
 9. function7.py
 10. namespaces_example.py
+11. my_first_loop.py
 11. **debug** F10 breakpoint 
 - dic_basics.py
 ## Exercícios
