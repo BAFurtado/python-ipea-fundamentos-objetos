@@ -1,6 +1,6 @@
 
 ## Endereços  
-Contributor: Gabriel Pistelli
+
 - **Curso**: [https://bafurtado.github.io/python-ipea-fundamentos-objetos](https://bafurtado.github.io/python-ipea-fundamentos-objetos/)
 - **Repositório git com os arquivos**: [https://github.com/baFurtado/python-ipea-fundamentos-objetos/](https://github.com/baFurtado/python-ipea-fundamentos-objetos/)
 
@@ -143,8 +143,23 @@ print(area_triangulo(altura=10, base=8))
 
     import  # explained
 
+### Lista de arquivos de exemplos
 
-
+1. list_media.py
+2. lists_generator.py
+2. is_even.py
+2. conditional1.py
+3. soma.py
+4. Compare com function3.py
+4. function0.py
+5. function1.py
+6. function2.py
+7. function4.py
+8. function5_comentada.py
+9. function7.py
+10. namespaces_example.py
+11. **debug** F10 breakpoint 
+- dic_basics.py
 ## Exercícios
 
 ### A. Probability with Python. Rascunho de uma simulação numérica...

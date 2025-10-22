@@ -27,7 +27,7 @@ def main(word):
 if __name__ == '__main__':
     w = 'tattarrattat'
     w1 = 'bia'
-    # print(first_letter(w))
-    # print(last_letter(w))
-    # print(middle_word(w))
-    print(main(w1))
+    print(first_letter(w))
+    print(last_letter(w))
+    print(middle_word(w))
+    print(f'é palindrome: {main(w1)}')

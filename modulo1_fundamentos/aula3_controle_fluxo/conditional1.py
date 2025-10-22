@@ -4,7 +4,7 @@
     """
 
 
-def positivo(x):
+def is_positive(x):
     if x > 0:
         print(f'{x} é positivo')
     elif x < 0:
@@ -15,10 +15,10 @@ def positivo(x):
 
 def determine_input(x):
     if type(x) == str:
-        print('you entered a string')
+        print(f'{x} é uma string')
         t_str(x)
     else:
-        print('you probably entered a number')
+        print(f'{x} provavelmente é um número ')
         t_valor(x)
 
 
@@ -33,17 +33,17 @@ def t_valor(x):
 
 def t_str(x):
     if x in 'aeiou':
-        print('x is a vowel')
+        print(f'{x} is a vowel')
     elif x == 'z':
-        print('x is z')
+        print(f'{x} is z')
     elif x in 'AEIOU':
-        print('x is a capital vowel')
+        print(f'{x} is a capital vowel')
     else:
-        print("I don't know what you entered")
+        print(f'Não tenho idea do que é {x}')
 
 
 if __name__ == '__main__':
-    # a = positivo(-10)
+    a = is_positive(-10)
     y = 20
     determine_input(y)
     y = 'o'

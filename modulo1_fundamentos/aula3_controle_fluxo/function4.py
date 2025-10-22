@@ -26,3 +26,5 @@ def soma():
 if __name__ == '__main__':
     soma()
     print_sentences()
+    # Teste não faz nada...
+    teste(var1, 20)

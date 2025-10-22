@@ -13,3 +13,5 @@ def to_f(c):
 if __name__ == '__main__':
     f = 104
     print(to_celsius(f))
+    c = 40
+    print(to_f(c))
