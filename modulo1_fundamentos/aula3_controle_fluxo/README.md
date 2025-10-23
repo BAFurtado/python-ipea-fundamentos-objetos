@@ -137,11 +137,71 @@ print(area_triangulo(altura=10, base=8))
 
 ## D. Namespaces
 
-    if __name__ == '__main__':  # explained
+Namespaces e if `__name__ == '__main__'` revisitado
+
+Dois modos de usar um script Python:
+
+A. Como módulo: Quando é importado por outro script (apenas disponibiliza funções/classes)
+
+B. Como programa: Quando é executado diretamente (roda o código completo)
+
+**Todo programa Python precisa de um "ponto de entrada"**, onde a execução começa.
+
+- Sem `if __name__ == '__main__'`: Tudo roda sempre, causando problemas quando importado
+
+ - Com `if __name__ == '__main__'`: Controlamos o que roda em cada situação
+
+### O Python lê e executa o script linha a linha, de cima para baixo:
+
+1. imports e definições de funções (prepara tudo)
+
+2. Executa o código "solto", fora de funções
+
+Problema: **Código solto roda SEMPRE, mesmo quando importado**
+
+Funções vs Código Solto:
+
+✅ Funções: São "receitas" que ficam na memória, só executam quando chamadas
+
+❌ Código solto (print(), cálculos): Executa IMEDIATAMENTE quando o arquivo é lido
+
+Script bem organizado:
+```python
+
+    # importações
+    import math
 
 
+    # funções
+    def ler_raio():
+        # lógica da leitura do raio (por exemplo, de um arquivo)
+        return raio
 
-    import  # explained
+    def area_circulo():
+        # lógica do cálculo. usa math.pi
+        pass
+
+
+    def main():
+        raio = ler_raio()
+        area = area_circulo(raio)
+        print(area)
+
+
+    if __name__ == '__main__':
+        main()  # Ponto de entrada controlado
+
+```
+
+- Controle preciso: Decide o que é "preparação" vs "execução"
+- Reutilização: Permite usar o mesmo arquivo como módulo E programa
+- Organização: Separa claramente a estrutura da execução principal
+
+### Exemplos
+1. calculos_import.py
+2. calculos_main.py
+3. calculos_teste.py
+
 
 ### Lista de arquivos de exemplos
 
