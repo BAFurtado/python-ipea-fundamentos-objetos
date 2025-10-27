@@ -54,7 +54,7 @@ class Time:
 
 if __name__ == '__main__':
     t1 = Time(6, 58, 4)
-    t2 = Time(19, 3, 5)
+    t2 = Time(19, 15, 75)
     # t1 + t2
     # t2 + t1
     t3 = t1 + t2
