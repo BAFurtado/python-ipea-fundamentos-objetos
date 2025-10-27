@@ -38,4 +38,7 @@ if __name__ == '__main__':
     minhas_instancias = list()
     for i in ['bob', 'john', 'mary', 'Carmela', 'Matilda']:
         minhas_instancias.append(Abstract(i))
+    print(type(minhas_instancias[0]))
+    print(minhas_instancias[0].texto)
+    print(minhas_instancias[0])
     
