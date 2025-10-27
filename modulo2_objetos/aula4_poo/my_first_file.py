@@ -9,7 +9,7 @@ def first():
 
 
 def second():
-    # Lembrando que se o W for informado incorretamente e o arquivo já exister,
+    # Lembrando que se o W for informado incorretamente e o arquivo já existir,
     # O ARQUIVO SERÁ SOBREESCRITO. OVERWRITTEN!!!
     with open('experience.txt', 'a') as f:
         f.write('This is my second saved output\n')
@@ -28,6 +28,7 @@ def numbers():
 
 # What have we done?
 def reading():
+    print(os.getcwd())
     with open('experience.txt', 'r') as f:
         lida = f.read()
     print(lida)
@@ -38,6 +39,7 @@ def recover_list(li):
     li = li.split('\n')
 
     recovered = list()
+    # porque o item 2? Use o debug para ver o conteúdo de li
     for each in li[2].split(';'):
         if len(each) > 0:
             recovered.append(int(each))

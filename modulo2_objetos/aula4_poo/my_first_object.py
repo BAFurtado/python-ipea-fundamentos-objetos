@@ -22,7 +22,8 @@ def square(my_agent):
 
 
 def dif_square(my_agent, x, y):
-    """ Receives a turtle, moves to a fixed position and draws a square in red"""
+    """ Receives a turtle and draws a figure
+    """
     my_agent.speed(1)
     my_agent.color('green')
     my_agent.pensize(2)

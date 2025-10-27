@@ -244,3 +244,5 @@ duplicado.
 
 ### B. Faça o desafio histogram Aula2
 
+### C. Jogo senha. Adivinhe o número de 1 a 100, com dicas.
+

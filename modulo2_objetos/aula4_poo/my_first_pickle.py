@@ -13,11 +13,13 @@ def load_pickle():
     with open('my_first_serialized_python_obj', 'rb') as f:
         ll = pickle.load(f)
     print(f'A soma da lista lida é {sum(ll)}')
-    print('Lida!')
+    print(f'Lida! {ll}')
+    return ll
 
 
 if __name__ == '__main__':
     r = reading()
     l = recover_list(r)
     save_pickle(l)
-    load_pickle()
+    lista_lida = load_pickle()
+    print(f'objeto lido: {lista_lida}')

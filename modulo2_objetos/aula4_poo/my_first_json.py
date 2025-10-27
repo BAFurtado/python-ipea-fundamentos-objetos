@@ -13,10 +13,12 @@ def load_json():
     with open("my_obj.json", "r") as f:
         ll = json.load(f)
     print(f'A soma da lista lida é {sum(ll):,.0f}')
+    return ll
 
 
 if __name__ == '__main__':
     r = reading()
     l = recover_list(r)
     save_json(l)
-    # load_json()
+    l_lida = load_json()
+    print(l_lida)
