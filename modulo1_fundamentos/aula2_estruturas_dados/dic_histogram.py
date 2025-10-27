@@ -7,6 +7,7 @@ import sys
 
 # Add parent directory to the front of Python path
 parent_dir = Path(__file__).parent.parent
+sys.path.insert(0, str(parent_dir))
 from aula3_controle_fluxo import lists_generator
 
 print('Introducing dictionary method .get(key, default values')

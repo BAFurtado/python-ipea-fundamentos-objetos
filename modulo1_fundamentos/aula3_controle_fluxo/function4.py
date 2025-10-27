@@ -8,6 +8,8 @@ def teste(parametroa, parametrob):
     parametrob : int
     retorna None
     """
+    pass
+
 
 def print_sentences():
     print('A vida é bela')
@@ -27,4 +29,4 @@ if __name__ == '__main__':
     soma()
     print_sentences()
     # Teste não faz nada...
-    teste(var1, 20)
+    valor_none = teste(var1, 20)

@@ -1,15 +1,6 @@
 # calculos.py - Este é um módulo com funções de cálculo
 import random
-
-
-def calcular_media(numeros):
-    """Calcula a média de uma lista de números"""
-    return sum(numeros) / len(numeros)
-
-
-def encontrar_maior_numero(numeros):
-    """Encontra o maior número em uma lista"""
-    return max(numeros)
+import calculos_teste
 
 
 def cria_lista():
@@ -22,8 +13,8 @@ def cria_lista():
 def main():
     """Processa dados e retorna estatísticas"""
     dados = cria_lista()
-    media = calcular_media(dados)
-    maior = encontrar_maior_numero(dados)
+    media = calculos_teste.calcular_media(dados)
+    maior = calculos_teste.encontrar_maior_numero(dados)
     
     resultado = {
         'media': media,

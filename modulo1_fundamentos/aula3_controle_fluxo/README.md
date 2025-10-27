@@ -199,18 +199,20 @@ Script bem organizado:
 - Organização: Separa claramente a estrutura da execução principal
 
 ### Exemplos
-1. calculos_import.py
+1. calculos_teste.py
 2. calculos_main.py
-3. calculos_teste.py
+**DEBUG example**
+3. calculos_import.py
 
 
 ### Lista de arquivos de exemplos
 
-1. list_media.py
-2. lists_generator.py
-2. is_even.py
+1. lists_generator.py
+2. list_media.py
+3. is_even.py -- **assert**
 2. conditional1.py
-3. soma.py
+3. soma.py -- **Transforme em função AND try/exception**
+**f-string** print(f'Algum texto entre quotes {variável_entre_chaves}') para formatar **output + texto**
 4. Compare com function3.py
 4. function0.py
 5. function1.py

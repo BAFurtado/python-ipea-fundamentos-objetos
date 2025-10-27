@@ -12,5 +12,6 @@ def define_x():
     print(y)
 
 
-# print(x)
+print(y)
 define_x()
+
