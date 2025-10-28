@@ -239,7 +239,7 @@ alunos) (`random.randint()`)
 3. Com os dias dos aniversários em uma lista, verifique se há
 algum duplicado. (várias possibilidades). Se não conseguir, use
 `set()`
-4. Faça vaŕias vezes (100). Conte quantos houve pelo menos um
+4. Faça várias vezes (100). Conte quantas vezes houve pelo menos um
 duplicado.
 
 ### B. Faça o desafio histogram Aula2
