@@ -33,9 +33,9 @@ Servidores públicos com alguma familiaridade em lógica de programação e uso 
 - [Aula 3: Controle de Fluxo e Funções]({{ site.baseurl }}/modulo1_fundamentos/aula3_controle_fluxo/)
 
 ### <img src="images/conf.png" width="30"> Módulo 2: POO e Dados
-- [Aula 4: Programação Orientada a Objetos]({{ site.baseurl }}/modulo2_objetos/aula4_poo/README.md)
-- [Aula 5: Introdução ao Pandas e DataFrames]({{ site.baseurl }}/modulo2_objetos/aula5_pandas_lib/README.md)
-- [Aula 6: Manipulação de Dados com Pandas]({{ site.baseurl }}/modulo2_objetos/aula6_pandas_dados/README.md)
+- [Aula 4: Programação Orientada a Objetos]({{ site.baseurl }}/modulo2_objetos/aula4_poo/)
+- [Aula 5: Introdução ao Pandas e DataFrames]({{ site.baseurl }}/modulo2_objetos/aula5_pandas_lib/)
+- [Aula 6: Manipulação de Dados com Pandas]({{ site.baseurl }}/modulo2_objetos/aula6_pandas_dados/)
 
 ### <img src="images/do_it.png" width="30"> Módulo 3: Intermediário e Projeto
 - [Aula 7: Git e Estrutura de Projetos]({{ site.baseurl }}/modulo3_projeto/aula7_git_estrutura_projeto/)
