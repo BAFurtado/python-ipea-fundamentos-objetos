@@ -61,7 +61,7 @@ media_precos = analisador.calcular_media("precos")
  - Como você faria uma classe que recebesse como inputs horas, minutos e segundos e tivesse a capacidade de somar e imprimir objetos no mesmo formato?
  - Quais dados seriam necessários?
  - Qual método central?
- - Qual a dificuldade central de somar horas, minjutos e segundos?
+ - Qual a dificuldade central de somar horas, minutos e segundos?
  - Como resolver essa dificuldade?
  - Qual outro método seria necessário? (dica: output?)
  - Exemplo: use o `debug` para ver que minute = 61. Logo, ajustes são necessários
