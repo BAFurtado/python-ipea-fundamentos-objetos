@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-# Cria uma DataFrame, utilizando-se de um dicioário.
+# Cria uma DataFrame, utilizando-se de um dicionário.
 # Keys são column names
 # Values, em listas, são os valores
 data = pd.DataFrame({'col_a': [0, 1, 2, 3, 4, 5, 6, 7],
@@ -17,7 +17,7 @@ data.tail()
 data.info()
 data.describe()
 data.mean(numeric_only=True)
-data.quantile(q=.9)
+data['col_a'].quantile(q=.9)
 data.sum(numeric_only=True)
 data.min(numeric_only=True)
 data.max(numeric_only=True)
@@ -62,7 +62,7 @@ oito_b = data.loc[data.strings == '8', 'col_b']
 # Renaming columns
 data.rename(columns={'col_a': 'col_a1'}, inplace=True)
 
-data = data.sort_values(by='col_a', ascending=True)
+data = data.sort_values(by='col_a1', ascending=True)
 data.groupby(by='col_b').col_b.agg(['sum', 'count'])
 
 # Dropping NANs
@@ -83,13 +83,13 @@ plt.show()
 data2 = pd.DataFrame({'outra_a': [20, 1, 92, 53, 4, 5, 6, 700],
                      'outra_b': [7, 26, 4, 45, 71, 71, 1, 870]})
 
-data.append(data2)
+data = pd.concat([data, data2], axis=1)
 
 data3 = pd.DataFrame({'col_a': [20, 1, 92, 53, 4, 5, 6, 700],
                       'col_b': [7, 26, 4, 45, 71, 71, 1, 870],
                       'strings': ['a', np.nan, None, 9, 8, 7, 10, 11]})
 
-data_nova2 = data.append(data3)
+data_nova2 = pd.concat([data, data3])
 
 pd.merge(data, data3, how='inner')
 pd.merge(data, data3, how='outer')

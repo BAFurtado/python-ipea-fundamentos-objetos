@@ -91,7 +91,7 @@ pip --version
 
 - **Opção 1**
    - Abra o terminal. Você **DEVE** ver `(venv-curso-ipea)` antes do prompt. 
-      - Caso você veja `(base)`, significa que você não está dentro do ambiente criado. Pode prosseguir, mas as bibliotecas serão instaladas no ambiente geral e não no criado por você. 
+      - Caso você veja `(base)`, significa que você não está dentro do ambiente criado. **Pode prosseguir**, mas as bibliotecas serão instaladas no ambiente geral e não no criado por você. 
       - Para entrar no ambiente correto, caso ele tenha sido criado, digite no Terminal: `venv-curso-ipea\Scripts\activate`, 
    Digite: 
    - `pip install pandas numpy scikit-learn jupyter matplotlib seaborn plotly openpyxl`
