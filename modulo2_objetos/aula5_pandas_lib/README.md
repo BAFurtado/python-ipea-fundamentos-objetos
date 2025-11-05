@@ -59,10 +59,17 @@ data = pd.DataFrame(data)
 ### Lendo DataFrames from data
 <img src="../../images/pandas_read_.png">
 
-### Mais exames...
+### Mais exames na sua tabela...
 
 7. `data.info()`  # Identifica tipo de objeto e non-nulls
 8. `data.describe()`  # Média, min, max, quantiles... para numeric columns
 9. `data[col].value_counts()`  # Calcula números de itens de uma *Series* == coluna
 
+### Adding new column
 
+1. Mamão com açuca:
+- data['nova_coluna'] = lista de dados ou valor (100)
+
+### Deleting column--muita calma nessa hora
+
+1. `data = data.drop('nome_coluna', axis=1)`  # axis=1 é coluna axis=0 é linha. **Note, precisa re-atribuir!**
