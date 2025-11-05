@@ -57,4 +57,12 @@ data = pd.DataFrame(data)
 
 
 ### Lendo DataFrames from data
-<img src="images/pandas_read_.png" width="30">
+<img src="../../images/pandas_read_.png">
+
+### Mais exames...
+
+7. `data.info()`  # Identifica tipo de objeto e non-nulls
+8. `data.describe()`  # Média, min, max, quantiles... para numeric columns
+9. `data[col].value_counts()`  # Calcula números de itens de uma *Series* == coluna
+
+
