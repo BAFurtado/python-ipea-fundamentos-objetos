@@ -10,6 +10,12 @@ import pandas as pd
 print(pd.__version__)
 ```
 
+```python
+# Ajuste rápido
+# No terminal
+pip install pandas
+```
+
 - **Pandas se utilizem de DataFrames que contém linhas e colunas nomeadas.** 
 
 - **Ou pelo nome da coluna ou pelo index da linha!**
