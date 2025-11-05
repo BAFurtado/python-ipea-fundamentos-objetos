@@ -56,6 +56,7 @@ def plot_shinfrin(table):
 
 if __name__ == '__main__':
     p = 'https://www.atptour.com/en/rankings/singles?rankRange=1-5000&rankDate=2022-03-21'
+
     r = get_table(p)
 
     # r.loc[r.Age == r.Age.max()]['Player']
