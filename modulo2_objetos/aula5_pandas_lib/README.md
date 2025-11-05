@@ -57,4 +57,4 @@ data = pd.DataFrame(data)
 
 
 ### Lendo DataFrames from data
-[Instalação do Python, VS Code e ferramentas essenciais]({{ site.baseurl }}/images/pandas_read_.png)
+<img src="images/pandas_read_.png">
