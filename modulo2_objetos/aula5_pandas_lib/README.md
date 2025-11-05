@@ -57,4 +57,4 @@ data = pd.DataFrame(data)
 
 
 ### Lendo DataFrames from data
-<img src="images/pandas_read_.png">
+<img src="images/pandas_read_.png" width="30">
