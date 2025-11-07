@@ -47,18 +47,6 @@ data = pd.DataFrame(data)
     - Caso não haja espaço no nome da coluna, pode-se usar diretamente ponto `data.city`
 6. `data.loc[2, 'id']`  # Acessa a linha 2 e a coluna id
 
-### Criando pandas DataFrames
-1. Com dicionários, como exemplificado
-2. Com nested lists, ou numpy.arrays, explicitando nomes de colunas.
-    - Caso contrário, colunas, como indexes, quando não explicitados são numéricos, começando em 0. 
-    - `import numpy as np`
-    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))`
-    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['x', 'y', 'z'])`
-
-
-### Lendo DataFrames from data
-<img src="../../images/pandas_read_.png">
-
 ### Mais exames na sua tabela...
 
 7. `data.info()`  # Identifica tipo de objeto e non-nulls
@@ -73,3 +61,16 @@ data = pd.DataFrame(data)
 ### Deleting column--muita calma nessa hora
 
 1. `data = data.drop('nome_coluna', axis=1)`  # axis=1 é coluna axis=0 é linha. **Note, precisa re-atribuir!**
+
+### Criando pandas DataFrames
+1. Com dicionários, como exemplificado
+2. Com nested lists, ou numpy.arrays, explicitando nomes de colunas.
+    - Caso contrário, colunas, como indexes, quando não explicitados são numéricos, começando em 0. 
+    - `import numpy as np`
+    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))`
+    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['x', 'y', 'z'])`
+
+
+### Lendo DataFrames from data
+<img src="../../images/pandas_read_.png">
+
