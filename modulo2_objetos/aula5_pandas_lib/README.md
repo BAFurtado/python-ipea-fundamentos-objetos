@@ -70,7 +70,9 @@ data = pd.DataFrame(data)
 
 ### Deleting column--muita calma nessa hora
 
-1. `data = data.drop('nome_coluna', axis=1)`  # axis=1 é coluna axis=0 é linha. **Note, precisa re-atribuir!**
+1. `data = data.drop('nome_coluna', axis=1)`  # axis=1 é coluna axis=0 é linha.
+
+**Note, precisa re-atribuir! ou usar inplace=True**
 
 ### IMPORTANTE: Seleção e filtro
 - Lógica: `minha_base[]` dentro do colchete condição booleana. 
@@ -78,6 +80,7 @@ data = pd.DataFrame(data)
 - Condição booleana: `minha_base['py-score'] > 80`
 - Coloca a condição como coluna, dentro da minha_base, juntando
 - `minha_base[minha_base['py-score'] > 80]]`
+
 
 ### Criando pandas DataFrames
 1. Com dicionários, como exemplificado

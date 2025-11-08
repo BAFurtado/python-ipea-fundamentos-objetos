@@ -36,6 +36,9 @@ d.loc[:4, 'ano'] = 2024
 # base[base[coluna] condição]
 d[d['py-score'] > 80]
 
+# Na base já filtrada, podemos, por exemplo, escolher uma coluna e calcular a média 
+d[d['py-score'] > 80]['py-score'].mean()
+
 import numpy as np
 data = pd.DataFrame(np.array([[1, 2, 3], 
                               [4, 5, 6], 
