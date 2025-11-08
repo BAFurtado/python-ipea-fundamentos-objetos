@@ -16,6 +16,8 @@ print(pd.__version__)
 pip install pandas
 ```
 
+## Pandas básico. Seguido de mão-na-massa com base simples. Seguido leitura real.
+
 - **Pandas se utilizem de DataFrames que contém linhas e colunas nomeadas.** 
 
 - **Ou pelo nome da coluna ou pelo index da linha!**
@@ -45,22 +47,37 @@ data = pd.DataFrame(data)
 5. `data['city']`  # Seleciona a coluna com o nome da coluna entre colchetes
     - Se quiser, pode utilizar `.iloc` para acessar o índice (número da coluna, ou da linha)
     - Caso não haja espaço no nome da coluna, pode-se usar diretamente ponto `data.city`
+
+### Note. Indexing similar ao de listas, mas agora com [linha, coluna]
 6. `data.loc[2, 'id']`  # Acessa a linha 2 e a coluna id
+7. `data.loc[2]`  # Acessa a linha 2 toda
+8. `data.loc[:, 'py-score']`  # Acessa a coluna toda. 
+- Claro, nesse caso, você pode acessar os métodos da série
+9. Por exemplo: `data.loc[:, 'py-score`].mean()
+10. Também é possível `data['py-score'].mean()`  # Mas para modificar a coluna, prefira sempre `data.loc[:, 'col']`
 
 ### Mais exames na sua tabela...
 
-7. `data.info()`  # Identifica tipo de objeto e non-nulls
-8. `data.describe()`  # Média, min, max, quantiles... para numeric columns
-9. `data[col].value_counts()`  # Calcula números de itens de uma *Series* == coluna
+11. `data.info()`  # Identifica tipo de objeto e non-nulls
+12. `data.describe()`  # Média, min, max, quantiles... para numeric columns
+13. `data[col].value_counts()`  # Calcula números de itens de uma *Series* == coluna
 
-### Adding new column
+### Adding new column and data
 
 1. Mamão com açuca:
 - data['nova_coluna'] = lista de dados ou valor (100)
+- data.loc[:4, 'nova_coluna'] = valor  # Adiciona valor em todas as linhas até o index 4, inclusive. 
 
 ### Deleting column--muita calma nessa hora
 
 1. `data = data.drop('nome_coluna', axis=1)`  # axis=1 é coluna axis=0 é linha. **Note, precisa re-atribuir!**
+
+### IMPORTANTE: Seleção e filtro
+- Lógica: `minha_base[]` dentro do colchete condição booleana. 
+- Note que é necessário repetir a base e a coluna na condição... por exemplo
+- Condição booleana: `minha_base['py-score'] > 80`
+- Coloca a condição como coluna, dentro da minha_base, juntando
+- `minha_base[minha_base['py-score'] > 80]]`
 
 ### Criando pandas DataFrames
 1. Com dicionários, como exemplificado
