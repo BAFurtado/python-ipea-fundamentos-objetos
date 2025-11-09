@@ -64,9 +64,9 @@ data = pd.DataFrame(data)
 
 ### Adding new column and data
 
-1. Mamão com açuca:
-- data['nova_coluna'] = lista de dados ou valor (100)
-- data.loc[:4, 'nova_coluna'] = valor  # Adiciona valor em todas as linhas até o index 4, inclusive. 
+1. Mamão com açúcar:
+- `data['nova_coluna'] = lista de dados ou valor` (100)
+- `data.loc[:4, 'nova_coluna'] = valor`  # Adiciona valor em todas as linhas até o index 4, inclusive. 
 
 ### Deleting column--muita calma nessa hora
 
@@ -78,7 +78,7 @@ data = pd.DataFrame(data)
 - Lógica: `minha_base[]` dentro do colchete condição booleana. 
 - Note que é necessário repetir a base e a coluna na condição... por exemplo
 - Condição booleana: `minha_base['py-score'] > 80`
-- Coloca a condição como coluna, dentro da minha_base, juntando
+- **Coloca a condição como coluna, dentro da minha_base, juntando**
 - `minha_base[minha_base['py-score'] > 80]]`
 
 
@@ -88,9 +88,75 @@ data = pd.DataFrame(data)
     - Caso contrário, colunas, como indexes, quando não explicitados são numéricos, começando em 0. 
     - `import numpy as np`
     - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))`
-    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['x', 'y', 'z'])`
+    - `data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['x', 'y', 'z'], 
+    index=['a', 'b', 'c'])`
 
 
 ### Lendo DataFrames from data
 <img src="../../images/pandas_read_.png">
+
+### Gotcha you! Erros leitura CSV
+
+1) Codificação de caracteres (acentos quebrados)
+
+- Arquivos vêm em latin-1, cp1252 ou iso-8859-1, não em utf-8.
+
+- Erro típico: `UnicodeDecodeError`
+
+`df = pd.read_csv('arquivo.csv', encoding='latin-1')`
+
+2) Separador diferente
+
+- Muitos .csv brasileiros usam **;** em vez de **,**
+
+`df = pd.read_csv('arquivo.csv', sep=';')`
+
+3) Decimal com vírgula
+
+`df = pd.read_csv('arquivo.csv', sep=';', decimal=',')`
+
+4) Colunas com problemas invisíveis, espaços antes/depois do nome, caracteres estranhos
+
+`df.columns = df.columns.str.strip()`
+
+5) Ler primeiras linhas quando há erro
+
+- Arquivos quebrados, cabeçalhos ruins, metadados no topo.
+
+`pd.read_csv('arquivo.csv', sep=';', nrows=10)`
+
+
+6) Header ausente ou bagunçado
+`df = pd.read_csv('arquivo.csv', sep=';', header=None)`
+
+
+- Ou pular linhas de cabeçalho de metadados:
+
+`df = pd.read_csv('arquivo.csv', skiprows=2)`
+
+8) Grande demais → ler um pedaço
+
+`df = pd.read_csv('arquivo.csv', nrows=50000)`
+
+- Ou só algumas colunas:
+
+`df = pd.read_csv('arquivo.csv', usecols=['UF', 'ANO', 'POP'])`
+
+- Thousands
+
+`df = pd.read_csv('arquivo.csv', sep=';', decimal=',', thousands='.')`
+
+### Exercício --lendo base `economia_br_firms.csv`
+
+1. Firmas com >100 empregados
+2. Setor de tecnologia fora de SP
+3. Cidades com desemprego > 12%
+4. Produtividade: revenue / employees
+5. Média de empregados por setor
+6. Faturamento médio por estado
+7. Massa salarial total por região
+8. Top 5 maiores faturamentos
+
+### `pandas_econ.csv.py`
+
 
