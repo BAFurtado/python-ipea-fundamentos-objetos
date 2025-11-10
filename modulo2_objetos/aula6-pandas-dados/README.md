@@ -6,7 +6,8 @@
 2. Groupby
 `pandas_centrao.py`
 
-3. 
+3. Weights + groupby
+`pandas_pnadc_py`
 
 
 

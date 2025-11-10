@@ -48,11 +48,11 @@ def read_age_gender(keys):
     results['female'] = pd.read_csv(keys[1], sep=';')
 
     data = extract_age_gender(results['male'], results['female'])
-    data = data.melt(id_vars=['AREAP', 'gender'], var_name=['age'])
+    data = data.melt(id_vars=['AREAP', 'gender'], var_name='age')
     data = data.rename(columns={'value': 'num_people'})
     output = pd.concat([output, data])
 
-    output.to_csv('output/temp_num_people_age_gender_AP.csv', sep=';', index=False)
+    output.to_csv('temp_num_people_age_gender_AP.csv', sep=';', index=False)
     return output
 
 
@@ -71,9 +71,9 @@ def get_color(file):
     new['AREAP'] = data['AREAP']
     for each in [1, 2, 3, 4, 5]:
         new[names[each - 1]] = data.apply(lambda x: x[each] / x[1:].sum(), axis=1)
-    new = new.melt(id_vars=['AREAP'], var_name=['cor'])
+    new = new.melt(id_vars=['AREAP'], var_name='cor')
     output = pd.concat([output, new])
-    output.to_csv('output/temp_etnia_AP.csv', sep=';', index=False)
+    output.to_csv('temp_etnia_AP.csv', sep=';', index=False)
     return output
 
 
@@ -94,30 +94,30 @@ def get_wage_num_family(file):
         data = data[['Cod_setor', 'V003', 'V004', 'V009', 'V010']]
     data = pd.merge(data, aps, on='Cod_setor', how='inner')
     # Average of averages and variances of sectors by weighted areas
-    data = data.groupby('AREAP').agg(np.mean)
+    data = data.groupby('AREAP').agg('mean')
     data = data.drop('Cod_setor', axis=1)
     data = data.reset_index()
     output = pd.concat([output, data])
     output = output.rename(columns={'V003': 'avg_num_people', 'V004': 'var_num_people',
                                     'V009': 'avg_wage', 'V010': 'var_wage'})
-    output.to_csv('output/temp_average_variance_family_wages.csv', sep=';', index=False)
+    output.to_csv('temp_average_variance_family_wages.csv', sep=';', index=False)
     return output
 
 
 if __name__ == '__main__':
     # Parece que só precisa atualizar num_people_age_gender
 
-    p1 = r'data/Pessoa11_RO.csv'
-    p2 = r'data/Pessoa12_RO.csv'
+    p1 = r'Pessoa11_RO.csv'
+    p2 = r'Pessoa12_RO.csv'
     k = [p1, p2]
 
     # mun_code = [1100122]
 
     output1 = read_age_gender(k)
 
-    p3 = r'data/Pessoa03_RO.csv'
+    p3 = r'Pessoa03_RO.csv'
     output2 = get_color(p3)
     #
-    p4 = r'data/Basico_RO.csv'
+    p4 = r'Basico_RO.csv'
     output3 = get_wage_num_family(p4)
 
