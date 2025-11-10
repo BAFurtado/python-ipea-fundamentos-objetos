@@ -3,7 +3,7 @@ import numpy as np
 
 
 if __name__ == '__main__':
-    p = 'data/centrao.xlsx'
+    p = 'centrao.xlsx'
     c = pd.read_excel(p)
     labels = c.columns
     c.columns = ['nome_mun', 'uf', 'cod_mun', 'votos_federal', 'perc_centrao', 'ranking']
@@ -11,7 +11,6 @@ if __name__ == '__main__':
     len(c)
     c = c.dropna()
     len(c)
-    c.loc[:, 'cod_mun'] = c.cod_mun.astype(int).astype(str).str.zfill(7)
     c.loc[:, 'nome_mun'] = c.nome_mun.str.title()
 
     # Groupby
@@ -22,5 +21,5 @@ if __name__ == '__main__':
     c.groupby(['uf']).votos_federal.max().sort_values(ascending=False).apply(lambda row: f'{row:,.2f}')
 
     c.groupby('uf').votos_federal.agg(['min', 'mean', max, 'count'])
-    c.groupby('uf').votos_federal.agg(['min', 'mean', max]).applymap(lambda x: f'{x:,.0f}')
+    c.groupby('uf').votos_federal.agg(['min', 'mean', max]).map(lambda x: f'{x:,.0f}')
 

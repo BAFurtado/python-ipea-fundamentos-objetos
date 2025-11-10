@@ -54,7 +54,7 @@ if __name__ == '__main__':
     produz_respostas(d2)
 
     # Plot rápido
-    d2.plot('longitude', 'latitude', kind='scatter')
+    d2.plot(x='longitude', y='latitude', kind='scatter')
     plt.show()
     d3 = d2.groupby('ShipMode').agg(['sum', 'count'])['Profit']
 
