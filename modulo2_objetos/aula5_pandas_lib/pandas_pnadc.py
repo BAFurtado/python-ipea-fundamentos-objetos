@@ -2,39 +2,65 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Good piece on GROUPBY: https://towardsdatascience.com/pandas-groupby-aggregate-transform-filter-c95ba3444bbb
-
 
 def read_basics(path):
-    data = pd.read_csv(path, sep=';')
-    return data
+    # Load only needed columns
+    cols = [
+        'domicilioid', 'renda_trabalho_habitual', 'peso',
+        'uf', 'trimestre', 'sexo'
+    ]
+    return pd.read_csv(path, sep=';', usecols=cols)
 
 
-def weighted_avg(data, by, values, weights):
-    group = data.groupby(by)
-    data[f'{values}_med'] = data[values] / group[values].transform("sum") * data[weights]
-    return data
-
-
-def weighted_avg_np(data, by, value, weights):
-    return data.groupby(data[by]).apply(lambda x: np.average(data[weights], weights=data[value]))
+def weighted_mean(df, by, value, weight):
+    # Compute weighted mean per group
+    wm = df.groupby(by).apply(
+        lambda x: np.average(x[value], weights=x[weight]),
+        include_groups=False
+    )
+    wm.name = f'{value}_weighted_mean'
+    return wm
 
 
 if __name__ == '__main__':
-    p = 'data/pnadc2020.csv'
+    p = 'pnadc2020.csv'
     d = read_basics(p)
-    renda_med = weighted_avg(d, 'domicilioid', 'renda_trabalho_habitual', 'peso')
-    renda_med_n2 = np.average(d['renda_trabalho_habitual'], weights=d['peso'])
-    # renda_med_n2_gr = d.groupby(['domicilioid']).apply(lambda x: np.average(x['renda_trabalho_habitual'],
-                                                                              #  weights=x['peso']))
 
-    print(renda_med.groupby('uf').agg('mean')['renda_trabalho_habitual_med'])
-    print(renda_med.groupby(['trimestre', 'uf']).agg('mean')['renda_trabalho_habitual_med'])
-    renda_med.groupby(['trimestre']).agg('mean')['renda_trabalho_habitual_med'].plot()
-    plt.show()
-    #
-    by_sex = renda_med.groupby(['trimestre', 'sexo']).agg('mean').reset_index()
-    for each in by_sex['sexo'].unique():
-        plt.plot(by_sex['trimestre'].unique(), by_sex[by_sex['sexo'] == each]['renda_trabalho_habitual_med'])
+    # Weighted mean by household
+    renda_med = weighted_mean(
+        d, 'domicilioid', 'renda_trabalho_habitual', 'peso'
+    )
+
+    # Merge weighted household mean back to df
+    d = d.merge(renda_med, on='domicilioid')
+
+    var = 'renda_trabalho_habitual_weighted_mean'
+
+    # Weighted income per UF
+    print("\nMédia ponderada por UF:")
+    print(d.groupby('uf')[var].mean())
+
+    # Weighted income by quarter and UF
+    print("\nMédia ponderada por trimestre e UF:")
+    print(d.groupby(['trimestre', 'uf'])[var].mean())
+
+    # Plot quarterly evolution
+    d.groupby('trimestre')[var].mean().plot(marker='o')
+    plt.title('Renda média ponderada por trimestre')
+    plt.ylabel('Renda média (R$)')
+    plt.xlabel('Trimestre')
     plt.show()
 
+    # Plot by sex over time
+    by_sex = d.groupby(['trimestre', 'sexo'])[var].mean().reset_index()
+
+    plt.figure()
+    for sex in by_sex['sexo'].unique():
+        df_sex = by_sex[by_sex['sexo'] == sex]
+        plt.plot(df_sex['trimestre'], df_sex[var], marker='o', label=f'Sexo {sex}')
+
+    plt.title('Renda média ponderada por trimestre e sexo')
+    plt.ylabel('Renda média (R$)')
+    plt.xlabel('Trimestre')
+    plt.legend()
+    plt.show()

@@ -15,5 +15,4 @@ df_grouped.reset_index()
 
 # Diferença para o TRANSFORM
 df['Marks_mean'] = df.groupby(['Subject']).transform('mean')
-df.groupby(['Subject']).agg(['mean'])
 
