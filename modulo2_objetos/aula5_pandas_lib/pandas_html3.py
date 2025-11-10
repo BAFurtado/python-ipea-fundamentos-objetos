@@ -48,19 +48,16 @@ def direto_csv_net(address):
 
 
 if __name__ == '__main__':
-    p2 = r'https://github.com/metatron-app/metatron-doc-discovery/blob/master/_static/data/sales-data-sample.csv'
-    d2 = direto_csv_net(p2)
+    p2 = 'https://raw.githubusercontent.com/metatron-app/metatron-doc-discovery/master/_static/data/sales-data-sample.csv'
+    d2 = pd.read_csv(p2)
     exemplo_iterate_over_group(d2)
-    # produz_respostas(d2)
+    produz_respostas(d2)
 
     # Plot rápido
-    # d2.plot('longitude', 'latitude', kind='scatter')
-    # plt.show()
-    # d3 = d2.groupby('ShipMode').agg(['sum', 'count'])['Profit']
+    d2.plot('longitude', 'latitude', kind='scatter')
+    plt.show()
+    d3 = d2.groupby('ShipMode').agg(['sum', 'count'])['Profit']
 
-    # Outro exemplo de iteração com DOIS resultados para cada loop
-    b = ['a', 'b', 'c', 'd']
-    for i, j in enumerate(b):
-        print(f'o i é {i}, e o j é {j}')
+
 
 
