@@ -146,7 +146,7 @@ data = pd.DataFrame(data)
 
 `df = pd.read_csv('arquivo.csv', sep=';', decimal=',', thousands='.')`
 
-### Exercício --lendo base `economia_br_firms.csv`
+### Exercício --lendo base `data/economia_br_firms.csv`
 
 1. Firmas com >100 empregados
 2. Setor de tecnologia fora de SP

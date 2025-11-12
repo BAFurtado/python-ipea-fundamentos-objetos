@@ -23,7 +23,7 @@ def weighted_mean(df, by, value, weight):
 
 
 if __name__ == '__main__':
-    p = 'pnadc2020.csv'
+    p = 'data/pnadc2020.csv'
     d = read_basics(p)
 
     # Weighted mean by household

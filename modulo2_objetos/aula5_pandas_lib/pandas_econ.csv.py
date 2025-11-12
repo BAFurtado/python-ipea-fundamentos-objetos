@@ -1,6 +1,6 @@
 import pandas as pd
 
-econ = pd.read_csv("economia_br_firms.csv")
+econ = pd.read_csv("data/economia_br_firms.csv")
 print(econ.head)
 
 
