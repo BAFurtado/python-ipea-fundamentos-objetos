@@ -3,7 +3,7 @@ import numpy as np
 
 
 if __name__ == '__main__':
-    p = 'centrao.xlsx'
+    p = 'data/centrao.xlsx'
     c = pd.read_excel(p)
     labels = c.columns
     c.columns = ['nome_mun', 'uf', 'cod_mun', 'votos_federal', 'perc_centrao', 'ranking']

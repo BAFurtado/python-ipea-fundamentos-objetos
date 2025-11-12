@@ -112,17 +112,17 @@ def get_wage_num_family(file):
 if __name__ == '__main__':
     # Parece que só precisa atualizar num_people_age_gender
 
-    p1 = r'Pessoa11_RO.csv'
-    p2 = r'Pessoa12_RO.csv'
+    p1 = r'data/Pessoa11_RO.csv'
+    p2 = r'data/Pessoa12_RO.csv'
     k = [p1, p2]
 
     # mun_code = [1100122]
 
     output1 = read_age_gender(k)
 
-    p3 = r'Pessoa03_RO.csv'
+    p3 = r'data/Pessoa03_RO.csv'
     output2 = get_color(p3)
     #
-    p4 = r'Basico_RO.csv'
+    p4 = r'data/Basico_RO.csv'
     output3 = get_wage_num_family(p4)
 

@@ -75,34 +75,34 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 6. **branch** -- ramo distinto para testes de código que deixo o ramo principal intocado (usualmente chamado main ou master). Quando a feature, o desenvolvimento, está completo, usa-se **merge** para juntar o branch com o tronco principal. 
 
-7. Fluxo de trabalho típico (VS Code)
-Abrir o projeto no VS Code.
+7. **Fluxo de trabalho típico (VS Code)**
+    Abrir o projeto no VS Code.
 
-Fazer mudanças em um ou mais arquivos.
+    Fazer mudanças em um ou mais arquivos.
 
-Ctrl+Shift+G → + (Stage) para preparar os arquivos.
+    Ctrl+Shift+G → + (Stage) para preparar os arquivos.
 
-Escrever mensagem de commit e clicar em ✓.
+    Escrever mensagem de commit e clicar em ✓.
 
-Sync Changes (ou Push) para enviar ao GitHub.
+    Sync Changes (ou Push) para enviar ao GitHub.
 
-Pull se houver mudanças remotas antes de começar um novo trabalho.
+    Pull se houver mudanças remotas antes de começar um novo trabalho.
 
-8. Dicas rápidas
-Use mensagens de commit curtas e descritivas (ex.: Adiciona função de leitura de CSV).
+8. **Dicas rápidas**
+    Use mensagens de commit curtas e descritivas (ex.: Adiciona função de leitura de CSV).
 
-Sempre faça pull antes de começar o trabalho para evitar conflitos.
+    Sempre faça pull antes de começar o trabalho para evitar conflitos.
 
-Evite versionar arquivos grandes, de dados ou ambientes (.csv, .env, venv/).
+    Evite versionar arquivos grandes, de dados ou ambientes (.csv, .env, venv/).
 
-Para ver o histórico:
+    Para ver o histórico:
 
-Clique com o botão direito sobre o arquivo → Open Timeline.
+    Clique com o botão direito sobre o arquivo → Open Timeline.
 
-Ou use a extensão “GitLens” para visualização avançada.
+    Ou use a extensão “GitLens” para visualização avançada.
 
-Se algo der errado, você pode:
+    Se algo der errado, você pode:
 
-Clicar nos três pontinhos (⋯) → Undo Last Commit.
+    Clicar nos três pontinhos (⋯) → Undo Last Commit.
 
-Ou restaurar arquivo individual via menu de contexto no Source Control
+    Ou restaurar arquivo individual via menu de contexto no Source Control
