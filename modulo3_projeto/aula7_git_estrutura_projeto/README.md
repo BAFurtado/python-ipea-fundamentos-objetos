@@ -49,7 +49,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 7. A partir daí proceda com **+** quando adicionar mudanças, dê `commit` salvo localmente no repositório git e `push' -> sincroniza com a origem-
 
-
+---
 ### B. Clonar repositório no VS Code
 1. Você pode clonar pelo próprio VS Code, sem usar terminal:
 
@@ -75,6 +75,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 6. **branch** -- ramo distinto para testes de código que deixo o ramo principal intocado (usualmente chamado main ou master). Quando a feature, o desenvolvimento, está completo, usa-se **merge** para juntar o branch com o tronco principal. 
 
+---
 7. **Fluxo de trabalho típico (VS Code)**
     Abrir o projeto no VS Code.
 
@@ -88,6 +89,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
     Pull se houver mudanças remotas antes de começar um novo trabalho.
 
+---
 8. **Dicas rápidas**
     Use mensagens de commit curtas e descritivas (ex.: Adiciona função de leitura de CSV).
 
@@ -106,3 +108,50 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
     Clicar nos três pontinhos (⋯) → Undo Last Commit.
 
     Ou restaurar arquivo individual via menu de contexto no Source Control
+
+
+---
+ ## D. GitHub Actions--AUTOMAÇÃO
+### Rodar python direto, na web, sem custos, para execução de rotinas: (a) busca de dados, (b) geração relatórios
+
+### GitHub Actions: Panorama Básico
+1. O que é GitHub Actions?
+GitHub Actions é uma plataforma de CI/CD (Integração Contínua/Entrega Contínua) que automatiza workflows diretamente no seu repositório GitHub.
+
+2. Workflow
+Arquivo YAML que define o processo de automação
+Fica na pasta **.github/workflows/**
+Pode ser acionado por eventos (schedule, push, pull request, etc.)
+
+```yaml
+on:  
+  # Agendamento (cron)
+  schedule:
+    - cron: '0 8 * * *'  # Todo dia às 8h UTC
+
+```
+
+3. Event (Evento)
+Gatilho que inicia o workflow
+Exemplos: **schedule**, workflow_dispatch, push, pull_request
+
+4. Job (Tarefa)
+Conjunto de steps que executa em um mesmo runner: uma função **`main()`**
+Jobs podem ser executados em paralelo ou sequencialmente
+
+5. Step (Passo)
+Unidade individual de execução
+
+6. Action (Ação)
+Comando reutilizável que pode ser compartilhado entre workflows
+
+7. Runner (Executor)
+Servidor que executa os workflows
+GitHub fornece runners ou você pode usar seus próprios
+
+### Exemplo mínimo configuração
+- coletor-diario.ym
+- Tarefa: construir `coletor_ipea.py`
+
+### Exemplo concreto
+- https://github.com/BAFurtado/ipea_dou_bot
