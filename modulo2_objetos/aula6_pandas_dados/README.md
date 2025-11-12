@@ -7,9 +7,12 @@
 `pandas_centrao.py`
 
 3. Weights + groupby
+`pandas_groupby_transform.py'
 `pandas_pnadc_py`
-
+`date_time.py'
 4. `pandas_real_life.py`
+
+5. `pandas_pnadc.py`
 
 ### `numpy_basics.py`
 

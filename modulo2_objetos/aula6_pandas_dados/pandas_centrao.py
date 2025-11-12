@@ -20,6 +20,6 @@ if __name__ == '__main__':
 
     c.groupby(['uf']).votos_federal.max().sort_values(ascending=False).apply(lambda row: f'{row:,.2f}')
 
-    c.groupby('uf').votos_federal.agg(['min', 'mean', max, 'count'])
-    c.groupby('uf').votos_federal.agg(['min', 'mean', max]).map(lambda x: f'{x:,.0f}')
+    c.groupby('uf').votos_federal.agg(['min', 'mean', 'max', 'count'])
+    c.groupby('uf').votos_federal.agg(['min', 'mean', 'max']).map(lambda x: f'{x:,.0f}')
 
