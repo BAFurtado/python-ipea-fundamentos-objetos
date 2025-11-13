@@ -45,7 +45,7 @@ if __name__ == '__main__':
     print(d.groupby(['trimestre', 'uf'])[var].mean())
 
     # Plot quarterly evolution
-    d.groupby('trimestre')[var].mean().plot(marker='o')
+    d.groupby('trimestre')[var].mean().plot(marker='.')
     plt.title('Renda média ponderada por trimestre')
     plt.ylabel('Renda média (R$)')
     plt.xlabel('Trimestre')
@@ -57,7 +57,9 @@ if __name__ == '__main__':
     plt.figure()
     for sex in by_sex['sexo'].unique():
         df_sex = by_sex[by_sex['sexo'] == sex]
-        plt.plot(df_sex['trimestre'], df_sex[var], marker='o', label=f'Sexo {sex}')
+        plt.plot(df_sex['trimestre'], df_sex[var], 
+        marker='.', 
+        label=f'Sexo {sex}')
 
     plt.title('Renda média ponderada por trimestre e sexo')
     plt.ylabel('Renda média (R$)')
