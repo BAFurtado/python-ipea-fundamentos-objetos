@@ -130,7 +130,7 @@ on:
     - cron: '0 8 * * *'  # Todo dia às 8h UTC
 
 ```
-
+---
 3. Event (Evento)
 Gatilho que inicia o workflow
 Exemplos: **schedule**, workflow_dispatch, push, pull_request

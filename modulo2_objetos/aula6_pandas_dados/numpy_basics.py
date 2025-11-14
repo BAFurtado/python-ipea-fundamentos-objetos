@@ -1,17 +1,22 @@
-# TERMINAL
+# TERMINAL--Se ainda precisar criar o ambiente:
+
 # conda create -n p39 python=3.9 pandas numpy scipy matplotlib seaborn
 # Windows e MAC
-# conda activate p39
-# source activate
+    # conda activate p39
+# Linux
+    # source activate
 
+# Observações...
 # A biblioteca certa para trabalhar com dinheiro em python DECIMAL
 # Numpy é baseado em C
-import random
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 
 def calculate_gini(incomes):
+    # incomes precisam ser valores positvos
     # Sort smallest to largest
     cumm = np.sort(incomes)
     # Values cannot be 0
@@ -40,12 +45,13 @@ def generate_grid(menor_x, maior_x, menor_y, maior_y, size):
     # zz = .4 * xx ** 2 + np.sin(yy) ** 3 + np.cos(xx) * 2.1
     # zz = np.random.random((101, 101)) * np.random.random((101, 101))
     # zz = np.log(np.random.random((101, 101)))
-    zz = np.exp(np.random.random((101, 101)))
+    zz = np.exp(np.random.random((size, size)))
     print(zz.shape)
     return xx, yy, zz
 
 
 def plot_countour(xx, yy, zz):
+    # xx, yy, zz são matrizes 2D
     plt.contourf(xx, yy, zz)
     plt.axis('scaled')
     plt.colorbar()
@@ -54,7 +60,7 @@ def plot_countour(xx, yy, zz):
 
 if __name__ == '__main__':
 
-    # 1. Create an array
+    # 1. Create an array. PRECISA SER DO MESMO DTYPE.Se houver algum caractere, todos serão string!
     a = np.arange(10)
     ones = np.ones(10)
     zeros = np.zeros(10)
@@ -74,9 +80,16 @@ if __name__ == '__main__':
     # Para cálculos de matrizes, utilize outros comandos (np.dot ou np.linalg.inv).
     # Padrão é ELEMENTO POR ELEMENTO.
 
-    c = b ** 2
-    c = b * a
-    c = b + a
+    # Todas as operações abaixo são ELEMENTWISE (elemento a elemento).
+    # Elas só funcionam porque a e b têm exatamente o mesmo shape: (3,3).
+
+    c = b ** 2       # Eleva cada elemento de b ao quadrado; shape (3,3)
+    c = b * a        # Multiplica cada posição de a e b; shapes iguais, operação válida
+    c = b + a        # Soma elemento a elemento; shapes iguais, operação válida
+
+    # a * 10: multiplicação por escalar, sempre possível; shape continua (3,3)
+    # b * a: novamente elemento a elemento; shapes iguais
+    # Subtração final: válida porque ambos resultados são (3,3)
     c = a * 10 - b * a
 
     # 4. Gotchas! ##### ##### ##### ##### #####
