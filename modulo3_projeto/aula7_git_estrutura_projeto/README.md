@@ -150,7 +150,7 @@ Servidor que executa os workflows
 GitHub fornece runners ou você pode usar seus próprios
 
 ### Exemplo mínimo configuração
-- coletor-diario.ym
+- coletor-diario.yml
 - Tarefa: construir `coletor_ipea.py`
 
 ### Exemplo concreto
