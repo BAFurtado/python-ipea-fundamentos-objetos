@@ -1,9 +1,8 @@
 ## Passo-a-passo Git 
 
-a. Criar repositórios
-B. Clonar repositórios (copiar)
-C. Versionar arquivos e entender o básico do Git.
-
+### A. Criar repositórios 
+### B. Clonar repositórios (copiar)
+### C. Versionar arquivos e entender o básico do Git.
 ---
 
 ### 1. Criar conta no GitHub
@@ -16,11 +15,13 @@ Acesse [github.com](https://github.com) e crie uma conta (se ainda não tiver).
 - Após a instalação, abra o VS Code e confirme que o Git foi reconhecido:  
   - Menu: **View → Terminal**
   - Digite:
+
     ```bash
     git --version
     ```
   - Se aparecer a versão, está tudo certo.  
 - **Configure seu nome e e-mail (usado nos commits)**:
+
   ```bash
   git config --global user.name "Seu Nome"
   git config --global user.email "seu@email"
@@ -47,7 +48,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 6. Pronto, o folder está vinculado. Quando criar um arquivo, o Source Contrl do VSCODE vai acusar mudanças. 
 
-7. A partir daí proceda com **+** quando adicionar mudanças, dê `commit` salvo localmente no repositório git e `push' -> sincroniza com a origem-
+7. A partir daí proceda com **+** quando adicionar mudanças, dê `commit` salvo localmente no repositório git e `push` -> sincroniza com a origem-
 
 ---
 ### B. Clonar repositório no VS Code
@@ -67,7 +68,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 ### C. Git basics--entendimento geral dos processos
 
-1. **`git init`** -- transforma o diretório corrente em um diretório versionado do tipo git. Na prática, cria um arquivo `.git'
+1. **`git init`** -- transforma o diretório corrente em um diretório versionado do tipo git. Na prática, cria um arquivo `.git`
 2. **commit** -- salva as mudanças locais para o arquivo git. 
 3. **push** -- empurra as mudanças locais para a origin (o repositório externo)
 4. **pull** -- puxa as mudanas do repositório externo, a `origin`, para o seu computador. 
@@ -95,7 +96,7 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
     Sempre faça pull antes de começar o trabalho para evitar conflitos.
 
-    Evite versionar arquivos grandes, de dados ou ambientes (.csv, .env, venv/).
+    Evite versionar arquivos grandes, de dados ou ambientes `(.csv, .env, venv/)`. Inclua-os no .gitignore.
 
     Para ver o histórico:
 
