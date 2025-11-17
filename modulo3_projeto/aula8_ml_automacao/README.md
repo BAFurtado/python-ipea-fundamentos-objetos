@@ -23,3 +23,8 @@ Veja ainda:
 
 **[Tutorial scikit-learn--link](https://scikit-learn.org/stable/)** 
 
+### Exemplo simples
+- facilita compreensão conceitos apreendidos
+
+**`iris101example.py`**
+
