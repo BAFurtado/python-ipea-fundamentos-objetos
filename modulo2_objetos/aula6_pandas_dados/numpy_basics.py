@@ -103,7 +103,7 @@ if __name__ == '__main__':
 
     # Preste atenção
     print(d.T.shape)
-    print(e.T.shape)
+
 
     # 5. Outro ponto relevante é manter somente elementos de mesmo TIPO. dtype. Menos flexível que pandas, por exemplo.
 
@@ -117,7 +117,7 @@ if __name__ == '__main__':
 
     # 7. Arrays espaçados, intervalos: incluídos(start, stop), size
     c = np.linspace(0, 1, 100)
-    d = np.linspace(2, 3, 5)
+    d = np.linspace(2, 3, 2)
 
     # 8. Várias op44erações com matrizes possíveis. Todas as restrições matemáticas se impõem.
     # Por exemplo: inverso de uma matriz [quadrada].
@@ -158,7 +158,8 @@ if __name__ == '__main__':
     # 12, Meshgrid. from docs: Return coordinate matrices from coordinate vectors.
     j, k, o = generate_grid(-5, 5, -5, 5, 101)
     plot_countour(j, k, o)
-
+    # TUPLES... 
+    # Quando a gente retorna mais de um elemento, por ex., de uma função, você atribuir a 2 variáveis
     # 7. Real-life: calculating GINI coefficient
     mu = 1.7
     salaries = np.random.lognormal(mean=mu, size=1000000)
