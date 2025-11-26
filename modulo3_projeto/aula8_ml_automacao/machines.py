@@ -1,29 +1,19 @@
-
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import VotingClassifier
-from sklearn.metrics import confusion_matrix
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import normalize
-from sklearn.svm import SVC
-
-
-def normalize_trial(x, xt):
-    n = []
-    for each in [x, xt]:
-        n.append(normalize(each.as_matrix()))
-    return n[0], n[1]
+from sklearn.linear_model import SGDClassifier
 
 
 def run_classifiers(x, x_test, y, y_test):
 
-    models = ['Tree', 'MPL', 'SVC', 'Voting']
+    models = ['Tree', 'MLP', 'SVC', 'Voting']
 
-    m1 = RandomForestClassifier(n_estimators=10000, criterion='gini', bootstrap=True, max_depth=15)
-    m3 = SVC(C=1, kernel='poly', degree=3, probability=True)
-    m4 = MLPClassifier(solver='lbfgs', early_stopping=True, activation='tanh', max_iter=2000)
-    voting = VotingClassifier(estimators=[('rf', m1), ('svc', m3), ('neural', m4)], voting='soft')
+    m1 = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=0)
+    m3 = SGDClassifier(loss="log_loss", max_iter=2000)
+    m4 = MLPClassifier(hidden_layer_sizes=(32,), max_iter=500)
 
-    # Fitting models
+    voting = VotingClassifier(estimators=[('rf', m1), ('sgd', m3), ('neural', m4)], voting='soft')
+
     cls = [m1, m3, m4, voting]
 
     for each in cls:
@@ -31,31 +21,17 @@ def run_classifiers(x, x_test, y, y_test):
 
     models = dict(zip(models, cls))
 
-    # Calculating accuracies and printing
-    for key in models.keys():
-        print('Score {}: {:.4f}.'.format(key, models[key].score(x_test, y_test)))
-        # Examining confusion matrix
+    for key in models:
         yhat = models[key].predict(x_test)
+        acc = accuracy_score(y_test, yhat)
         cm = confusion_matrix(y_test, yhat)
-        with open(f'output/confusion_matrix_{key}.txt', 'w') as handler:
-            msg = 'Confusion Matrix {}:\n {}.'.format(key, cm)
-            handler.write(msg)
-            print('Confusion Matrix {}:\n {}.'.format(key, cm))
-    # Returns a dictionary of models' names and the model itself
+
+        print(f"\n=== {key} ===")
+        print(f"Accuracy: {acc:.4f}")
+        print("Confusion matrix:")
+        print(cm)
+        print("\nClassification report:")
+        print(classification_report(y_test, yhat))
+
     return models
 
-
-def predict(model, data):
-    return model.predict(data)
-
-
-def fit(model, a, b):
-    model.fit(a, b)
-
-
-# How would we use it...##########################################################
-#    x, y = get_data()
-#    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=TEST_SIZE, random_state=10)
-
-#    # Running model
-#    models = machines.run_classifiers(x_train, x_test, y_train, y_test)
