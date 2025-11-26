@@ -20,7 +20,7 @@ def main(samples=1000, random_state=42):
     # Create somewhat realistic price based on features + some noise
     df = pd.DataFrame(data)
     base_price = (
-        df['square_meters'] * 5000 + 
+        df['square_meters'] * 7000 + 
         df['bedrooms'] * 20000 + 
         df['bathrooms'] * 20000 +
         (df['year_built'] - 1950) * 1000 -

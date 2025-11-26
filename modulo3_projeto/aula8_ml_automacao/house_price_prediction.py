@@ -22,7 +22,8 @@ X_test_scaled = scaler.transform(X_test)
 
 # Build the model - notice this is regression, so 1 output neuron, no activation
 model = tf.keras.Sequential([
-        tf.keras.layers.Dense(64, activation='relu', input_shape=(5,)),
+        tf.keras.Input(shape=(5,)),
+        tf.keras.layers.Dense(64, activation='relu'),
         tf.keras.layers.Dense(32, activation='relu'),
         tf.keras.layers.Dense(1)  # Single output for price, no activation
 ])
@@ -44,7 +45,10 @@ test_loss, test_mae = model.evaluate(X_test_scaled, y_test, verbose=0)
 print(f"\nTest Mean Absolute Error: ${test_mae:,.2f}")
 
 # Make a prediction for a new house
-new_house = np.array([[180, 3, 2, 1995, 8]])  # 180 sq_meters, 3 bed, 2 bath, etc.
+new_house = pd.DataFrame(
+    [[180, 3, 2, 1995, 8]], 
+    columns=['square_meters', 'bedrooms', 'bathrooms', 'year_built', 'distance_to_city_center']
+)
 new_house_scaled = scaler.transform(new_house)
 predicted_price = model.predict(new_house_scaled, verbose=0)
 
