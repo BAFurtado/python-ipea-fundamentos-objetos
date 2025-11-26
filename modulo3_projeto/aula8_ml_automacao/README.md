@@ -28,7 +28,7 @@ Veja ainda:
 
 **`iris101example.py`**
 
-### Exemplo debt default
+### Exemplo debt default--CLASSIFICATION
 `main.py` + `machines.py`
 
 ### Regressions with neural network
