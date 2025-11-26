@@ -71,10 +71,10 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 1. **`git init`** -- transforma o diretório corrente em um diretório versionado do tipo git. Na prática, cria um arquivo `.git`
 2. **commit** -- salva as mudanças locais para o arquivo git. 
 3. **push** -- empurra as mudanças locais para a origin (o repositório externo)
-4. **pull** -- puxa as mudanas do repositório externo, a `origin`, para o seu computador. 
+4. **pull** -- puxa as mudanças do repositório externo, a `origin`, para o seu computador. 
 5. **`git status`** -- te conta em qual branch você está...
 
-6. **branch** -- ramo distinto para testes de código que deixo o ramo principal intocado (usualmente chamado main ou master). Quando a feature, o desenvolvimento, está completo, usa-se **merge** para juntar o branch com o tronco principal. 
+6. **branch** -- ramo distinto para testes de código que deixa o ramo principal intocado (usualmente chamado main ou master). Quando a feature, o desenvolvimento, está completo, usa-se **merge** para juntar o branch com o tronco principal. 
 
 ---
 7. **Fluxo de trabalho típico (VS Code)**
@@ -92,23 +92,23 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 
 ---
 8. **Dicas rápidas**
-    Use mensagens de commit curtas e descritivas (ex.: Adiciona função de leitura de CSV).
+    - Use mensagens de commit curtas e descritivas (ex.: Adiciona função de leitura de CSV).
 
-    Sempre faça pull antes de começar o trabalho para evitar conflitos.
+    - Sempre faça pull antes de começar o trabalho para evitar conflitos.
 
-    Evite versionar arquivos grandes, de dados ou ambientes `(.csv, .env, venv/)`. Inclua-os no .gitignore.
+    - Evite versionar arquivos grandes, de dados ou ambientes `(.csv, .env, venv/)`. Inclua-os no .gitignore.
 
-    Para ver o histórico:
+    - Para ver o histórico:
 
-    Clique com o botão direito sobre o arquivo → Open Timeline.
+      - Clique com o botão direito sobre o arquivo → Open Timeline.
 
-    Ou use a extensão “GitLens” para visualização avançada.
+      - Ou use a extensão “GitLens” para visualização avançada.
 
-    Se algo der errado, você pode:
+    - Se algo der errado, você pode:
 
-    Clicar nos três pontinhos (⋯) → Undo Last Commit.
+       - Clicar nos três pontinhos (⋯) → Undo Last Commit.
 
-    Ou restaurar arquivo individual via menu de contexto no Source Control
+       - Ou restaurar arquivo individual via menu de contexto no Source Control
 
 
 ---
@@ -124,6 +124,7 @@ Arquivo YAML que define o processo de automação
 Fica na pasta **.github/workflows/**
 Pode ser acionado por eventos (schedule, push, pull request, etc.)
 
+
 ```yaml
 on:  
   # Agendamento (cron)
@@ -131,6 +132,7 @@ on:
     - cron: '0 8 * * *'  # Todo dia às 8h UTC
 
 ```
+
 ---
 3. Event (Evento)
 Gatilho que inicia o workflow
@@ -155,4 +157,4 @@ GitHub fornece runners ou você pode usar seus próprios
 - Tarefa: construir `coletor_ipea.py`
 
 ### Exemplo concreto
-- https://github.com/BAFurtado/ipea_dou_bot
+- [https://github.com/BAFurtado/ipea_dou_bot](https://github.com/BAFurtado/ipea_dou_bot)
