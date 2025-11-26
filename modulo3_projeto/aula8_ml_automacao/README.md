@@ -31,4 +31,7 @@ Veja ainda:
 ### Exemplo debt default
 `main.py` + `machines.py`
 
+### Regressions with neural network
+`generating_housing_data` + `house_price_prediction.py`
+
 

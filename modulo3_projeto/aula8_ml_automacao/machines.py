@@ -6,7 +6,7 @@ from sklearn.linear_model import SGDClassifier
 
 def run_classifiers(x, x_test, y, y_test):
 
-    models = ['Tree', 'MLP', 'SVC', 'Voting']
+    models = ['Tree', 'MLP', 'SGD', 'Voting']
 
     m1 = RandomForestClassifier(n_estimators=200, max_depth=15, random_state=0)
     m3 = SGDClassifier(loss="log_loss", max_iter=2000)
