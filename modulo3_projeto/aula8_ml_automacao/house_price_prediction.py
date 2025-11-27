@@ -36,7 +36,7 @@ model.compile(optimizer='adam',
 # Train the model
 print("Training house price predictor...")
 history = model.fit(X_train_scaled, y_train, 
-                    epochs=200, 
+                    epochs=500, 
                     validation_split=0.2,
                     verbose=0)  # Set to 1 to see progress
 
