@@ -69,6 +69,8 @@ Você está informando para o git onde está o remoto (na nuvem), que se chama o
 ### C. Git basics--entendimento geral dos processos
 
 1. **`git init`** -- transforma o diretório corrente em um diretório versionado do tipo git. Na prática, cria um arquivo `.git`
+2. `git add .` Adiciona TODOS os arquivos do diretório. Se quiser excluir algum, crie um arquivo .gitignore e liste os arquivos que você não quer versionar (excluir do vinculamento)
+3. `git add my_file.txt` Adicionar só esse arquivo. 
 2. **commit** -- salva as mudanças locais para o arquivo git. 
 3. **push** -- empurra as mudanças locais para a origin (o repositório externo)
 4. **pull** -- puxa as mudanças do repositório externo, a `origin`, para o seu computador. 
