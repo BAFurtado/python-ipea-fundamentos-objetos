@@ -1,6 +1,7 @@
-## Panorama visualização  $+$ Projetos $+$ Exercícios 
+## Panorama visualização + Projetos + Exercícios 
 
 1. Biblioteca básica *python* Matplotlib. Default
+
 `import matplotlib.pyplot as plt`
 
     - Exemplo simples
@@ -26,7 +27,7 @@
 - `plt.scatter(x, y)`
 
 ### Boxplot
-- `plt.boxplot(x)'
+- `plt.boxplot(x)`
 
 ### Heatmap
 - `plt.imshow(matriz)`
