@@ -11,7 +11,7 @@ PROJECT_ROOT = BASE_DIR.parents[1]
 
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from data import means_comparison
+import means_comparison
 
 
 def dumbbell_plot(

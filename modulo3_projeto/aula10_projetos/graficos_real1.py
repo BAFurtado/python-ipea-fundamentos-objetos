@@ -1,7 +1,16 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+from pathlib import Path
+import sys
 import groups_cols
+
+
+# Explicita diretório que contém este arquivo
+BASE_DIR = Path(__file__).resolve().parent
+# Deve apontar para a raiz do projeto. Nesse caso, 2 níveis acima (python 0, 1)
+PROJECT_ROOT = BASE_DIR.parents[1]
+
+sys.path.insert(0, str(PROJECT_ROOT))
 
 colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red']
 
@@ -58,7 +67,7 @@ def plotting(data, name='name'):
 
 
 if __name__ == '__main__':
-    p = '../../data/IQR.csv'
+    p = PROJECT_ROOT / 'data/IQR.csv'
     d = pd.read_csv(p, sep=';')
     d.drop('Unnamed: 0', inplace=True, axis=1)
     pivoted_d = pd.pivot(d, index='ACP', columns='pol', values='mean')
