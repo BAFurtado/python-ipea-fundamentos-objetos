@@ -190,16 +190,11 @@ model.score(X_test, y_test)
 ```
 
 ---
-# 7️⃣ Modelo simples de preços imobiliários (
-
-⚠️ **Material de apoio / pistas — não é solução completa**
-
-Este exercício propõe um **modelo hedônico simples** de preços imobiliários,
-seguindo a prática usual em economia urbana e economia aplicada.
+# 7️⃣ Modelo simples de preços imobiliários 
 
 ---
 
-## 🎯 Objetivo
+##  Objetivo
 
 Construir um modelo de regressão onde:
 
@@ -209,17 +204,15 @@ Construir um modelo de regressão onde:
 
 Modelo conceitual:
 
-\[
-\log(P_i) = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \dots + \varepsilon_i
-\]
+![equation](https://latex.codecogs.com/svg.image?\log(P_i)=\beta_0+\beta_1X_{1i}+\beta_2X_{2i}+\dots+\varepsilon_i)
 
 Onde:
-- \(P_i\) é o preço do imóvel
-- \(X\) são características como área, número de quartos, localização etc.
+- (P_i) é o preço do imóvel
+- (X) são características como área, número de quartos, localização etc.
 
 ---
 
-## 🧠 Intuição econômica
+##  Intuição econômica
 
 - Preços imobiliários costumam ser:
   - assimétricos
@@ -235,7 +228,7 @@ associada a uma variação unitária na covariável.
 
 ---
 
-## ⚠️ Problemas prováveis
+## Problemas prováveis
 
 - Esquecer de aplicar log no preço
 - Usar variáveis categóricas sem tratamento
@@ -245,7 +238,7 @@ associada a uma variação unitária na covariável.
 
 ---
 
-## 📋 Lógica mínima esperada
+##  Lógica mínima esperada
 
 1. Carregar os dados reais do CSV
 2. Inspecionar e limpar os dados
@@ -258,7 +251,7 @@ associada a uma variação unitária na covariável.
 
 ---
 
-## 🔧 Snippets úteis (pistas)
+## Snippets úteis (pistas)
 
 ### Log do preço
 ```python

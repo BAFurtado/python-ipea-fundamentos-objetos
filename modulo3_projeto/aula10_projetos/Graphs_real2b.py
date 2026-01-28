@@ -1,7 +1,17 @@
+from pathlib import Path
+import sys
+
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import means_comparison
+# Explicita diretório que contém este arquivo
+BASE_DIR = Path(__file__).resolve().parent
+# Deve apontar para a raiz do projeto. Nesse caso, 2 níveis acima (python 0, 1)
+PROJECT_ROOT = BASE_DIR.parents[1]
+
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from data import means_comparison
 
 
 def dumbbell_plot(
@@ -77,13 +87,15 @@ def dumbbell_plot(
 
 
 if __name__ == '__main__':
-    o = pd.read_csv('../../data/means_comparison_output_normTrue.csv', sep=';')
+    import os
+    print(os.getcwd())
+    o = pd.read_csv(PROJECT_ROOT / 'data/means_comparison_output_normTrue.csv', sep=';')
     o.rename(columns={'Unnamed: 0': 'param'}, inplace=True)
-    o2 = pd.read_csv('../../data/means_comparison_optimal_non_optimal_normTrue.csv', sep=';')
+    o2 = pd.read_csv(PROJECT_ROOT / 'data/means_comparison_optimal_non_optimal_normTrue.csv', sep=';')
     o2.rename(columns={'Unnamed: 0': 'param'}, inplace=True)
     lst_parameters = means_comparison.different(o, o2)
 
-    d = pd.read_csv('../../data/parameters_norm_optimal.csv', sep=';')
+    d = pd.read_csv(PROJECT_ROOT / 'data/parameters_norm_optimal.csv', sep=';')
     d.rename(columns={'Unnamed: 0': 'parameters'}, inplace=True)
     d = d.set_index('parameters')
     d = d.sort_values(by='difference')
